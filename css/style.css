@@ -1,0 +1,106 @@
+* , *::after , *::before{
+    padding: 0;
+    margin: 0;
+}
+
+
+:root{
+
+    --main-dark-color:#101214;
+    --secondary-dark-color:#161a1d;
+    --tertiary-dark-color:#333;
+
+}
+
+body{
+    background-color: var(--main-dark-color);
+}
+
+
+h1.my-header{
+    font-family: "Pacifico", cursive;
+    width: fit-content;
+
+}
+
+h1::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    background-color: red;
+    height: 20%;
+    bottom: 55px;
+    z-index: -1;
+    left: 0px;
+    transition: height 350ms;
+}
+
+h1.my-header:hover::before{
+    height:30% ;
+}
+
+
+hr{
+    border-style: dashed;
+}
+
+h2{
+    color:#00FFFF;
+}
+h2::after{
+    content: "\f02e";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #fff;
+    margin-left: 5px;
+    font-size: 25px;
+}
+
+h2::before{
+    content: "\f02e";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #ffffff72;
+    margin-right: 5px;
+    font-size: 25px;
+}
+
+input.form-control:focus{
+    box-shadow: 0px 0px 7px rgba(255, 255, 255, 0.327);
+}
+input.form-control::placeholder{
+    text-transform: capitalize;
+    color: var(--tertiary-dark-color);
+}
+
+
+
+ul li{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+ul li:nth-child(1){
+    background-color: red;
+}
+ul li:nth-child(2){
+    background-color: blue;
+}
+ul li:nth-child(3){
+    background-color: black;
+}
+
+
+
+
+.alert-box i.fa-arrow-right{
+    color: red;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+span.error-btn{
+    cursor: pointer;
+}

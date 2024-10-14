@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmarker App</title>
+  <link rel="shortcut icon" href="./imgs/Bookmark-PNG-Image.png.crdownload" type="image/x-icon">
+
+
+
+
+    <!--  Pacifico Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <!--  Font Awesome Library 6 -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!--  Bootstrap version 5.3 -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!--  My style Sheet -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!--  Media Query style sheet -->
+    <link rel="stylesheet" href="./css/media.css" />
+  </head>
+  <body>
+    <main class="py-5">
+      <section class="position-relative">
+        <div id="alert-box" class="alert-box position-absolute top-50 start-50 translate-middle bg-white rounded-1 py-2 px-3 z-3 d-none">
+       <div class="ball d-flex justify-content-between align-items-center">
+        <ul class="d-flex gap-3 list-unstyled align-items-center">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <span id="error-btn" class="fs-4 error-btn"><i class="fa-solid fa-x"></i></span>
+       </div>
+       <h4 class="mb-3 w-75">Site Name or Url is not valid, Please follow the rules below :</h4>
+       <p class="fs-4"><i class="fa-solid fa-arrow-right"></i> Site name must contain at least 3 characters</p>
+       <p class="fs-4"><i class="fa-solid fa-arrow-right"></i> Site URL must be a valid one</p>
+
+       
+        </div>
+
+
+
+        <div class="container" id="my-container">
+          <h1
+            class="text-white text-center fw-bold display-1 position-relative my-header py-5 mx-auto"
+          >
+            bookmarker
+          </h1>
+
+          <hr class="my-5 border-1 border-white" />
+
+          <h2
+            class="fw-bold text-capitalize text-center header-book position-relative"
+          >
+            bookmark your favorite sites
+          </h2>
+
+          <form id="form-input" class="">
+            <div class="form-box mb-5">
+              <label class="text-white fs-5 text-capitalize" for="site-name"
+                ><i class="fa-solid fa-book-bookmark"></i> site name</label
+              >
+              <input autocomplete="off"
+                class="form-control mt-2"
+                id="site-name"
+                type="text"
+                placeholder="bookmark name"
+                name="site-name"
+                oninput="validationData(nameSiteInputRegex,nameSiteInput)"
+              />
+            </div>
+            <div class="form-box">
+              <label class="text-white fs-5 text-capitalize" for="site-name"
+                ><i class="fa-solid fa-link"></i> site URL</label
+              >
+              <input autocomplete="off"
+                class="form-control mt-2"
+                id="site-url"
+                type="url"
+                placeholder="bookmark name"
+                name="site-name"
+                oninput="validationData(urlSiteInputRegex,urlSiteInput)"
+              />
+            </div>
+
+            <button onclick="getData()"
+              id="submit-btn"
+              class="btn btn-outline-warning mt-5 my-btn d-block mx-auto px-5"
+            >
+              Submit
+            </button>
+          </form>
+
+          <hr class="my-5 border-1 border-white" />
+         <div class="row mb-2">
+           <!--  First row static -->
+           <div class="col-3 bg-white">
+            <div class="inner text-dark text-center py-2">
+              <h3>Index</h3>
+            </div>
+          </div>
+
+          <div class="col-3 bg-primary">
+            <div class="inner text-dark text-center py-2">
+              <h3>Website Name</h3>
+            </div>
+          </div>
+
+          <div class="col-3 bg-white">
+            <div class="inner text-dark text-center py-2">
+              <h3>Visit</h3>
+            </div>
+          </div>
+
+          <div class="col-3 bg-info">
+            <div class="inner text-dark text-center py-2">
+              <h3>Delete</h3>
+            </div>
+          </div>
+         </div>
+          <div id="row-container" class="row gy-1">
+
+           
+
+
+
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--  Bootstrap Js file -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!--  My Js file -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
